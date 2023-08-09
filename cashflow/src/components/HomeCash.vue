@@ -4,7 +4,15 @@
       <HeaderCash></HeaderCash>
     </template>
     <template #resume>
-      <ResumeCash></ResumeCash>
+      <ResumeCash
+        :totalLabel="'Ahorro Total'"
+        :label="label"
+        :amount="amount"
+        :totalAmount="40000"
+      >
+        <template #graphic> Graphic</template>
+        <template #action>Action</template>
+      </ResumeCash>
     </template>
     <template #movements>
       <MovementsCash></MovementsCash>
@@ -24,6 +32,12 @@ export default {
     HeaderCash,
     ResumeCash,
     MovementsCash,
+  },
+  data() {
+    return {
+      amount: null,
+      label: null,
+    };
   },
 };
 </script>
